@@ -1,0 +1,15 @@
+{
+  "name": "web2zh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+   "start" : "node app",
+    "dev" : "node --watch app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

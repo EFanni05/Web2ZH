@@ -1,0 +1,3 @@
+#ignore files and directories that should not be tracked by git
+node_modules/
+.evn
