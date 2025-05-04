@@ -1,5 +1,7 @@
 /**
  * packege lévő running script
+ * 
+ * id hogy a json okes response de standard jo
  *
  * de kihagyható mivel ez a idióta kiszedt minden node dolgot, lol
  * server a file neve
@@ -84,7 +86,7 @@
           if(!err){
               res.status(200)
               let content = data.toString().split('\n').filter(x => x != "")
-              res.status(200).json({msg: content})
+              res.status(200).json({logs: content})
               console.log(`${fileName} succesfull read`)
           }
           else{
