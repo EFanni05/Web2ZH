@@ -75,10 +75,10 @@
       var log = `${now.toLocaleString("hu-HU", format)}\n`
       fs.appendFile(fileName, log, (err) => {
           if(!err){
-              console.log(`${fileName} succesfull added new log`)
+              console.log(`\x1b[94m${fileName} succesfull added new log\x1b[0m`)
           }
           else{
-              console.log(`${fileName} failed to add new log`)
+              console.log(`\x1b[34m${fileName} failed to add new log\x1b[0m`)
           }
       })
       res.header('Neptun', neptuneCode)
@@ -86,17 +86,17 @@
           if(!err){
               res.status(200)
               let content = data.toString().split('\n').filter(x => x != "")
-              res.status(200).json({logs: content})
-              console.log(`${fileName} succesfull read`)
+              res.status(200).json({logs: content}) 
+              console.log(`\x1b[1;32m${fileName} succesfull read\x1b[0m`)
           }
           else{
               res.status(400).json({msg: "Something went wrong"})
-              console.log(`${fileName} failed to read`)
+              console.log(`\x1b[1;31m${fileName} failed to read\x1b[0m`)
           }
       })
   })
 
   //app listen hogy futson
   app.listen(port, () => {
-      console.log(`Server is running on localhost:${port}`)
+      console.log(`Server is running on\x1b[3;96m http://localhost:${port}\x1b[0m`)
   })
