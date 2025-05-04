@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
 //get specific data
 app.get('/:id', (req, res) => {
     let id = req.params.id;
+    console.log(id);
     if(id == undefined || id == null || id == ""){
         res.status(400).json({msg: "Id is required"});
     }

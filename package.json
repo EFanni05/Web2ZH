@@ -1,13 +1,13 @@
 {
   "name": "web2zh",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "A ZH gyakorolo kodja",
+  "main": "server.js",
   "scripts": {
-   "start" : "node app",
-    "dev" : "node --watch app"
+    "start": "node server",
+    "dev": "node --watch server"
   },
-  "author": "",
+  "author": "Elekes Fanni",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0"
