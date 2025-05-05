@@ -1,7 +1,7 @@
 /**
  * packege lévő running script
  * 
- * id hogy a json okes response de standard jo
+ * idk hogy a json okes response de standard jo
  *
  * de kihagyható mivel ez a idióta kiszedt minden node dolgot, lol
  * server a file neve
@@ -69,29 +69,25 @@
       const fileName = "log.txt"
       var now = new Date();
       const format = {
-          year: 'numeric', month: 'long', day: 'numeric',
-          hour: '2-digit',minute: '2-digit', second: '2-digit'
+          year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
       }
       var log = `${now.toLocaleString("hu-HU", format)}\n`
       fs.appendFile(fileName, log, (err) => {
-          if(!err){
-              console.log(`\x1b[94m${fileName} succesfull added new log\x1b[0m`)
-          }
-          else{
-              console.log(`\x1b[34m${fileName} failed to add new log\x1b[0m`)
+          if(err){
+              console.log(`\x1b[1;34m[ERROR]\x1b[0m ${fileName} failed to add new log`)
           }
       })
-      res.header('Neptun', neptuneCode)
+      res.header('Neptun', neptuneCode) 
       fs.readFile(fileName, (err, data) => {
           if(!err){
               res.status(200)
               let content = data.toString().split('\n').filter(x => x != "")
               res.status(200).json({logs: content}) 
-              console.log(`\x1b[1;32m${fileName} succesfull read\x1b[0m`)
+              console.log(`\x1b[1;32m[SUCCESS]\x1b[0m ${fileName} succesfull read`)
           }
           else{
               res.status(400).json({msg: "Something went wrong"})
-              console.log(`\x1b[1;31m${fileName} failed to read\x1b[0m`)
+              console.log(`\x1b[1;34m[ERROR]\x1b[0m ${fileName} failed to read`)
           }
       })
   })
