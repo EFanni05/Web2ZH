@@ -41,6 +41,9 @@
       else if(b == undefined || b == null || b == ""){
           res.status(400).json({msg: "Hiányos szöveg"});
       }
+      if(isNaN(a) || isNaN(b)){
+          res.status(400).json({msg: "Nem szám"});
+      }
       else{
           res.status(200).json({text: text.slice(a, b)});
       }
